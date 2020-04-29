@@ -1,0 +1,56 @@
+// WAP to check whether the strings are anagram or not
+
+public class Anagram {
+	char temp;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	 String S1=new String("Funeral").trim().toLowerCase();
+	 String S2=new String("real fun").toLowerCase();
+	 String S3=S2.replace(" ","");
+	 
+	 char[] c1=S1.toCharArray();
+	 char[] c2=S3.toCharArray();
+	 
+	 Anagram obj=new Anagram();
+	 obj.sort(c1);
+	 obj.sort(c2);
+	 
+	if(checkAnagram(c1, c2)) System.out.println("are anagram");
+	else System.out.println("not anagram");
+	 
+	}
+	
+	public void sort(char[] c)
+	{
+	 for(int i=0;i<c.length;i++)
+	 {
+		 for(int j=0;j<c.length;j++)
+		 {
+			 if(c[i]<c[j])
+			 {
+				 temp=c[i];
+				 c[i]=c[j];
+				 c[j]=temp;
+			 }
+		 }
+	 }
+//	 for(int k=0;k<c.length;k++)
+//	 {
+//		 System.out.println(c[k]);
+//	 }
+	}
+	public static boolean checkAnagram(char[] c1,char[] c2)
+	{
+		for(int i=0;i<c1.length;i++)
+		{
+				if(c1[i]!=c2[i])
+					return false;
+			
+		}
+		return true;
+	}
+
+}
+
