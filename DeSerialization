@@ -1,0 +1,38 @@
+//DeSerialization
+package Serialization;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+
+public class Deserialization {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Student obj1=null;
+		try {
+
+		FileInputStream fis=new  FileInputStream("serial1.txt");
+        ObjectInputStream ois=new ObjectInputStream(fis);
+        obj1=(Student)ois.readObject();
+        
+        System.out.println(obj1);
+		}
+		catch(IOException e)
+		{
+		 e.printStackTrace();
+			return;
+		} 
+		catch(ClassNotFoundException e)
+	     {
+	       System.out.println("Student Class is not found.");
+	       e.printStackTrace();
+	       return;
+	     }
+		
+		
+	}
+
+}
+
