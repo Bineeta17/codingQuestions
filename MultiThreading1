@@ -1,0 +1,47 @@
+//Multithreading
+
+package multithreading;
+
+class Table
+{
+	public void printable(int n)
+	{
+		for(int i=1;i<=5;i++)
+		{
+		System.out.println(n*i);
+		}
+		try
+		{
+			Thread.sleep(500);
+		}catch(Exception e) {}
+	}
+}
+
+public class SynchronizationMethod {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Table t=new Table();
+		
+		
+		Thread t1=new Thread()
+				{
+			public void run()
+			{
+				t.printable(5);
+			}
+				};
+				
+			Thread t2=new Thread()
+				{
+			public void run()
+			{
+				t.printable(100);
+			}
+				};
+
+				t1.start();
+				t2.start();
+
+	}
+
