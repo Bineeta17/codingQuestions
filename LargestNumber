@@ -23,7 +23,7 @@ class Solution {
             {
                 max2=nums[i];
             }
-            // else break;
+           // else break;
           
         }
         if(max2*2>max1) return -1;
