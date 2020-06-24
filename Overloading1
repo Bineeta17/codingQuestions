@@ -1,0 +1,25 @@
+package overloading_Overriding;
+
+public class sum_overloading {
+	
+
+	public int add(int a,int b)
+	{
+		return a+b;
+	}
+
+	public float add(int a,float b)
+	{
+		return a+b;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		sum_overloading obj=new sum_overloading();
+		System.out.println(obj.add(1, 6));
+
+	}
+
+}
+

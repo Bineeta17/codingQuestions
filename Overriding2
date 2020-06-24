@@ -1,0 +1,61 @@
+package overloading_Overriding;
+
+class Parent
+{
+	//private methods are not overridden
+	private void show()
+	{
+		System.out.println("show of parent called");
+	}
+	
+	public void disp()
+	{
+		System.out.println("disp of parent called");
+	}
+	
+	static void play()
+	{
+		System.out.println("play called of parent");
+	}
+	
+}
+
+class child extends Parent
+{
+	// new method of child class
+	private void show()
+	{
+		System.out.println("show of child called");
+	}
+	
+	public void disp()
+	{
+		System.out.println("disp of child called");
+	}
+	
+	//this method is hidden in subclass
+	static void play()
+	{
+		System.out.println("play called of child");
+	}
+	
+}
+
+public class Main_overriding {
+	
+	
+	public static void main(String[] args) {
+		
+		Parent p=new Parent();
+		p.disp();
+		child obj=new child();
+		obj.disp();
+		
+		Parent p1=new child();
+		p1.play();//call the method of parent since static methods cannot be overridden
+		
+		
+	}
+
+}
+

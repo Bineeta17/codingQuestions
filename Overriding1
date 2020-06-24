@@ -1,0 +1,51 @@
+package overloading_Overriding;
+
+class Parent2
+{
+	void hello() throws RuntimeException
+	{
+		System.out.println("hello from parent class");
+	}
+	
+}
+
+class Child2 extends Parent2
+{
+	
+	void hello() throws RuntimeException
+	{
+		System.out.println("hello from child2");
+	}
+	
+}
+class Child3 extends Parent2
+{
+	
+	void hello() throws ArithmeticException
+	{
+		System.out.println("hello from child3");
+	}
+}
+class Child4 extends Parent2
+{
+	
+	void hello() 
+	{
+		System.out.println("hello from child4");
+	}
+}
+
+public class OverridingException {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		Child2 obj=new Child2();
+		obj.hello();
+	
+
+	}
+
+}
+
